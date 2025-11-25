@@ -1,4 +1,5 @@
 use std::{process, env};
+use crate::handlers::path_exist::is_path_exist;
 
 
 pub fn get_input_params() -> (String, String, u32) {
@@ -13,6 +14,11 @@ pub fn get_input_params() -> (String, String, u32) {
     let input_file_path: String  = args[1].clone();
     let output_file_path: String = args[2].clone();
     let quality = args[3].parse().expect("Quality argument must be a number");
+
+    if !is_path_exist(&input_file_path) {
+        eprintln!("Path didn't exist");
+        process::exit(1);
+    }
 
     // Checking if an argument can be a percentage
     if quality > 100 || quality < 1 {
