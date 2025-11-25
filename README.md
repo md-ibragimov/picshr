@@ -1,4 +1,4 @@
-# Simple picture shrink tool based in [libcaesium]([http://example.com](https://crates.io/crates/libcaesium))
+# Simple picture shrink tool based in [libcaesium](https://crates.io/crates/libcaesium)
 
 ## Usage
 
